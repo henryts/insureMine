@@ -1,14 +1,16 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
+import multer from 'multer';
+import { upload } from '../config/multer.js';
+ 
+import { uploadFileController } from '../controller/uploadFileController.js';
+// import userRoutes from './userRoutes';
+// import accountRoutes from './accountRoutes';
+// import policyRoutes from './policyRoutes';
+// ... import other route files
 
-// const userRoutes = require('./userRoutes');
-// const accountRoutes = require('./accountRoutes');
-// const policyRoutes = require('./policyRoutes');
-// // ... import other route files
-
-// router.use('/api', userRoutes);
+router.post('/upload', upload, uploadFileController);
 // router.use('/api', accountRoutes);
 // router.use('/api', policyRoutes);
 
-
-module.exports = router;
+export default router;
