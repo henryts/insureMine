@@ -14,7 +14,8 @@ export const saveUserData = async function(row) {
         zip: row?.zip,
         dob: new Date(row?.dob),
     });
-    await newUser.save();
+    const savedUser = await newUser.save();
+    return savedUser?._id;
 }
 
 export const savePolicyData =async function(row)
@@ -29,7 +30,8 @@ export const savePolicyData =async function(row)
         policy_end_date: new Date(row?.policy_end_date),
         
     });
-    await newPolicy.save();
+   const savedPolicy =  await newPolicy.save();
+   return savedPolicy._id;
    
 }
 export const saveAgentData =async function(row)
@@ -39,7 +41,8 @@ export const saveAgentData =async function(row)
       userType:row?.userType
 
     });
-    await newAgent.save();
+   const savedAgent =  await newAgent.save();
+   return saveAgentData?._id;
 }
 
 export const saveCarrierData = async function(row)
@@ -49,7 +52,8 @@ export const saveCarrierData = async function(row)
      hasActiveClientPolicy:row?.hasActiveClientPolicy,
      csr: row?.csr
 });
-await newCarrier.save();
+const savedCarrier =await newCarrier.save();
+return savedCarrier?._id;
 }
 
 export const saveLobData = async function(row)
@@ -58,7 +62,8 @@ export const saveLobData = async function(row)
        catagory_name:row?.catagory_name,
        
     });
-    await newLob.save();
+ const savedLob=   await newLob.save();
+ return savedLob?._id
 }
 export const saveAccountData = async function(row)
 {  
@@ -67,6 +72,7 @@ export const saveAccountData = async function(row)
         account_type:row?.account_type
  
     });
-    newAccount.save();
+ const savedAccount = await   newAccount.save();
+ return savedAccount._id;
 
 }
