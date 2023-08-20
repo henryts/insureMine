@@ -11,21 +11,19 @@ import { fileURLToPath } from "url";
 import router from "./routes/index.js";
 import { upload } from "./config/multer.js";
 import connection from "./config/mongoose.js";
+import userRoutes from "./routes/userRoutes.js"
 
 
 const app = express();
 app.use(express.json());
 
 app.use(router);
-//app.use(upload.single("file"));
+
 /* CONFIGURATIONS */
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 dotenv.config();
-
-// app.use(bodyParser.json({ limit: "30mb", extended: true }));
-// app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
 
 app.use(helmet());
@@ -33,6 +31,7 @@ app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"));
 app.use(cors());
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
+app.use("/user", userRoutes);
 const port = process.env.PORT || 5000;
 const startServer = async () => {
     try {

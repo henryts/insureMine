@@ -4,32 +4,41 @@ const policySchema = mongoose.Schema({
   
      policyMode:{
         type:String,
-        default:""  
+        trim: true,       
      },
      policy_number:{
         type:String,
-        default:""
+        trim: true,
+       
      },
 
      policy_amount_written:{
         type:Number,
-        default:""
+        trim: true,
+       
      },
      premium_amount:{
         type:Number,
-        default:""
+        trim: true,
+      
      },
      policy_type:{
         type:String,
-        default:""
+        trim: true,
+      
      },
      policy_start_date:{
         type:Date,
-        default:""
+       
      },
      policy_end_date:{
         type:Date,
-        default:""
+       
+     },
+     producer:{
+        type: String,
+        trim:true
+        
      },
     
      lob_id: {
@@ -40,6 +49,8 @@ const policySchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "carrier",
     },
+   
+
 })
 
 const Policy = mongoose.model("Policy", policySchema);

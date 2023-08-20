@@ -4,14 +4,14 @@ const accountSchema = ({
         
      account_name: {
         type:String,
-        default:""
+        trim:true,
      },
      account_type:{
         type:String,
-        default:""
-     }
-
+        trim:true,  
+     } 
     });
+    
 
     const Account = mongoose.model("Account", accountSchema);
 

@@ -4,11 +4,11 @@ const agentSchema = ({
         
      agent_name: {
         type:String,
-        default:""
+        unique:true
      },
      userType: {
         type:String,
-        default:""
+       
      },
    
     });  

@@ -3,31 +3,40 @@ import mongoose from "mongoose";
 const userSchema = mongoose.Schema({
     firstname: {
         type: String,
-        default:"",
+        trim: true,
     },
     gender: {
         type: String,
-        default:"",
+        lowercase: true,
+        trim: true,
     },
     city: {
         type: String,
-        default:"",
+         trim: true,
+    },
+    state:{
+        type: String,
+        trim: true,
+    },
+    phone:{
+        type: String,
+        trim: true,
     },
     address: {
         type: String,
-        default:"",
+         trim: true,
     },
     zip: {
         type: String,
-        default:"",
+        trim: true,
     },
     dob: {
         type: String,
-        default:"",
+
     },
     account_id: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "accounts",
+        ref: "account",
     },
     policy_id: {
         type: mongoose.Schema.Types.ObjectId,
@@ -39,9 +48,11 @@ const userSchema = mongoose.Schema({
     },
     applicant_id: {
         type: String,
-        default:""
-    },
-  
+        default:"",
+      //  unique: true,
+        trim: true,
+    }
+   
 });
 
 const User = mongoose.model("User", userSchema);

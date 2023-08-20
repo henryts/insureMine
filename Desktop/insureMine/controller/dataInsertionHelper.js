@@ -10,7 +10,10 @@ export const saveUserData = async function(row) {
         firstname: row?.firstname,
         gender: row?.lastName,
         city: row?.city,
+        state:row?.state,
         address: row?.address,
+        phone:row?.phone,
+
         zip: row?.zip,
         dob: new Date(row?.dob),
     });
@@ -26,6 +29,7 @@ export const savePolicyData =async function(row)
         policy_amount_written: row?.premium_amount_written,
         premium_amount: row?.premium_amount,
         policy_type: row?.policy_type,
+        producer: row?.producer,
         policy_start_date: new Date(row?.policy_start_date),
         policy_end_date: new Date(row?.policy_end_date),
         
@@ -59,7 +63,7 @@ return savedCarrier?._id;
 export const saveLobData = async function(row)
 {
     const newLob = new Lob({
-       catagory_name:row?.catagory_name,
+       catagory_name:row?.category_name,
        
     });
  const savedLob=   await newLob.save();

@@ -1,9 +1,9 @@
 import { config } from 'dotenv';
 import mongoose from "mongoose";
 config();
-const CONNECTION_URL = 'mongodb://0.0.0.0:27017/insureMine';
+const local_url ='mongodb://localhost:27017/insuredMine'
 const connection = mongoose
-  .connect(CONNECTION_URL, {
+  .connect('mongodb://0.0.0.0:27017/insuredMine', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
