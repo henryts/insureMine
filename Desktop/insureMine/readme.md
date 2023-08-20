@@ -14,8 +14,6 @@ This repository contains the code for InsuredMine, a backend application designe
   - [User Endpoints](#user-endpoints)
   - [Policy Endpoints](#policy-endpoints)
   - [Account Endpoints](#account-endpoints)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
