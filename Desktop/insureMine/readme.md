@@ -83,7 +83,7 @@ POST /account/createAccount
 ### Get account details by ID:
 
 GET /account/getAccountDetails/:id
-###Update account details by ID:
+### Update account details by ID:
 
 
 PUT /account/updateAccount/:id
