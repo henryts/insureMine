@@ -51,43 +51,43 @@ PORT=8001
 
 ### API Documentation
 ## User Endpoints
-# Create a new user:
+### Create a new user:
 
 POST /user/createUser
-# Read user details by ID:
+### Read user details by ID:
 
 GET /user/readUser/:id
 
-# Update user details by ID:
+### Update user details by ID:
 PUT /user/createUser/:id
 
-# Delete a user by ID:
+### Delete a user by ID:
 DELETE /user/createUser/:id
 
-## Policy Endpoints
-# Create a new policy:
+### Policy Endpoints
+### Create a new policy:
 POST /policy/createPolicy
-# Get policy details by ID:
+### Get policy details by ID:
 GET /policy/getPolicyDetails/:id
-# Update policy details by ID
+### Update policy details by ID
 
 PUT /policy/updatePolicy/:id
-# Delete a policy by ID:
+### Delete a policy by ID:
 
 DELETE /policy/delete/:id
 
-## Account Endpoints
-# Create a new account:
+### Account Endpoints
+### Create a new account:
 
 POST /account/createAccount
-# Get account details by ID:
+### Get account details by ID:
 
 GET /account/getAccountDetails/:id
-# Update account details by ID:
+###Update account details by ID:
 
 
 PUT /account/updateAccount/:id
-# Delete an account by ID:
+### Delete an account by ID:
 
 DELETE /account/deleteAcount/:id
 
