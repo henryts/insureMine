@@ -29,6 +29,7 @@ export const  uploadFileController = async(req,res)=>{
         
          await User.findByIdAndUpdate(userId, { $set: { policy_id: policyId,account_id:accountId,agent_id:agentId } });
          await Policy.findByIdAndUpdate(policyId, { $set: { lob_id: lobId,carrier_id:carrierId } });
+         await Account.findByIdAndUpdate(accountId, { $set: { userId:userId } });
         
        
         })

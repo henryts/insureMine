@@ -11,7 +11,7 @@ export const createPolicy = async (req, res) => {
 };
 
 export const getPolicyById = async (req, res) => {
-    const policyId = req.params.id;
+    const policyId =  (req.params.id).toString();
     try {
         const policy = await Policy.findById(policyId);
         if (!policy) {
@@ -24,7 +24,7 @@ export const getPolicyById = async (req, res) => {
 };
 
 export const updatePolicy = async (req, res) => {
-    const policyId = req.params.id;
+    const policyId =  (req.params.id).toString();
     try {
         const updatedPolicy = await Policy.findByIdAndUpdate(policyId, req.body, { new: true });
         if (!updatedPolicy) {
@@ -37,7 +37,7 @@ export const updatePolicy = async (req, res) => {
 };
 
 export const deletePolicy = async (req, res) => {
-    const policyId = req.params.id;
+    const policyId = (req.params.id).toString();
     try {
         const deletedPolicy = await Policy.findByIdAndDelete(policyId);
         if (!deletedPolicy) {

@@ -5,9 +5,9 @@ import  * as userController  from '../controller/userController.js';
 
 
 router.post('/createUser',userController.createUser);
-router.post('/createUser',userController.getUserById);
-router.post('/createUser',userController.updateUser);
-router.post('/createUser',userController.deleteUser);
+router.get('/readUser/:id',userController.getUserById);
+router.put('/createUser/:id',userController.updateUser);
+router.delete('/createUser/:id',userController.deleteUser);
 
 
 export default router;

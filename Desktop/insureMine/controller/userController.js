@@ -11,7 +11,8 @@ export const createUser = async (req, res) => {
 };
 
 export const getUserById = async (req, res) => {
-    const userId = req.params.id;
+    const userId =(req.params.id).toString();
+  
     try {
         const user = await User.findById(userId);
         if (!user) {
@@ -19,12 +20,13 @@ export const getUserById = async (req, res) => {
         }
         res.status(200).json(user);
     } catch (error) {
+        console.log(error);
         res.status(500).json({ error: 'Error retrieving user' });
     }
 };
 
 export const updateUser = async (req, res) => {
-    const userId = req.params.id;
+    const userId = (req.params.id).toString();
     try {
         const updatedUser = await User.findByIdAndUpdate(userId, req.body, { new: true });
         if (!updatedUser) {
@@ -37,7 +39,7 @@ export const updateUser = async (req, res) => {
 };
 
 export const deleteUser = async (req, res) => {
-    const userId = req.params.id;
+    const userId = (req.params.id).toString();
     try {
         const deletedUser = await User.findByIdAndDelete(userId);
         if (!deletedUser) {

@@ -73,7 +73,11 @@ export const saveAccountData = async function(row)
 {  
     const newAccount = new Account({
         account_name:row?.account_name,
-        account_type:row?.account_type
+        account_type:row?.account_type,
+        account_holder:row?.firstname,
+        dob:row?.dob,
+        address:row?.address,
+        
  
     });
  const savedAccount = await   newAccount.save();
